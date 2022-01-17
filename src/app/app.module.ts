@@ -15,7 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   providers: [],
-  exports: [AccueilComponent],
-  bootstrap: [AccueilComponent]
+  exports: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
