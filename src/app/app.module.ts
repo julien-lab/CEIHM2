@@ -4,15 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {AppRoutingModule} from './appRoutingModule';
+import { RecetteComponent } from './recette/recette.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccueilComponent
+    AccueilComponent,
+    RecetteComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
+
   ],
   providers: [],
   exports: [AppComponent],
