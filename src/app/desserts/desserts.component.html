@@ -1,0 +1,96 @@
+<div>
+  <a id="title" href="/">
+    EasyCook
+  </a>
+  <a href="/cart">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" color="black" class="bi bi-cart-check" id="i_cart" viewBox="0 0 16 16">
+      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+    </svg>
+  </a>
+</div>
+
+<div id="firstTitle">Desserts</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3" id="leftPanel">
+      <span style="font-weight: bold"> Types d'entrées </span>
+      <br>
+      <div style="margin-left: 20px">
+        <input id="froid" type="checkbox" style="float: left; margin-top: 5px; >">
+        <div style="margin-left: 25px;">
+          Froides
+        </div>
+      </div>
+
+      <div style="margin-left: 20px">
+        <input id="chaud" type="checkbox" style="float:   left; margin-top: 5px;>">
+        <div style="margin-left: 25px;">
+          Chaudes
+        </div>
+      </div>
+      <br>
+      <span style="font-weight: bold"> Légumes </span>
+      <br>
+      <div style="margin-left: 20px">
+        <input id="courgettes" type="checkbox" style="float: left; margin-top: 5px; >">
+        <div style="margin-left: 25px;">
+          Courgettes
+        </div>
+      </div>
+      <div style="margin-left: 20px">
+        <input id="aubergines" type="checkbox" style="float:   left; margin-top: 5px;>">
+        <div style="margin-left: 25px;">
+          Aubergines
+        </div>
+      </div>
+      <div style="margin-left: 20px">
+        <input id="concombres" type="checkbox" style="float: left; margin-top: 5px; >">
+        <div style="margin-left: 25px;">
+          Concombres
+        </div>
+      </div>
+      <div style="margin-left: 20px">
+        <input id="poivrons" type="checkbox" style="float:   left; margin-top: 5px;>">
+        <div style="margin-left: 25px;">
+          Poivrons
+        </div>
+      </div>
+      <div style="margin-left: 20px">
+        <input id="endives" type="checkbox" style="float: left; margin-top: 5px; >">
+        <div style="margin-left: 25px;">
+          Endives
+        </div>
+      </div>
+      <div style="margin-left: 20px">
+        <input id="carottes" type="checkbox" style="float:   left; margin-top: 5px;>">
+        <div style="margin-left: 25px;">
+          Carottes
+        </div>
+      </div>
+      <br>
+
+      <span style="font-weight: bold"> Prix </span>
+      <br>
+      <ngb-rating max="5">
+        <ng-template let-fill="fill" let-index="index">
+          <span class="star"  [class.filled]="fill === 100">&#9733;</span>
+        </ng-template>
+      </ngb-rating>
+
+      <br>
+      <br>
+
+      <span style="font-weight: bold"> Durée </span>
+
+      <ngb-rating max="5">
+        <ng-template let-fill="fill" let-index="index">
+          <span class="star"  [class.filled]="fill === 100">&#9733;</span>
+        </ng-template>
+      </ngb-rating>
+
+    </div>
+  </div>
+</div>
+
