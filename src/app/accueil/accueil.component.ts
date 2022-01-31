@@ -14,6 +14,8 @@ export class AccueilComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
+
