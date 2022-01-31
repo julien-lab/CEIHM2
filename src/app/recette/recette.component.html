@@ -21,6 +21,7 @@
     <h4>Liste des ingrédients</h4>
     <br>
     <div *ngFor="let ingredient of ingredients" class="centrer">{{ingredient}}</div>
+    <button id="add" (click)="addToCart()">Ajouter à la liste de course</button>
   </div>
   <div id="etapes" class="centrer">
     <h4>Recette</h4>
