@@ -1,5 +1,51 @@
+
 #i_cart{
   position: absolute;
   right: 50px;
   top: 0px;
+}
+
+#titre{
+  text-align: center;
+}
+
+#add{
+  float: right;
+}
+
+#images{
+  text-align: center;
+}
+
+#img1{
+  margin-right: 10%;
+}
+
+#corps{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#suggestions{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#ingredients{
+  text-align: center;
+}
+
+#form{
+  width: 60px;
+}
+
+.centrer{
+  text-align: center;
+}
+
+.horizontal{
+  vertical-align: center;
+  text-align: center;
 }
