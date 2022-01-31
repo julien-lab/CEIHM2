@@ -2,3 +2,24 @@
 #listeCourses{
   text-align: center;
 }
+
+#liste{
+  align-items: center;
+  text-align: center;
+}
+
+.corps{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ingredients{
+  border: 3px solid black;
+  border-radius: 30px;
+}
+
+.supprimer{
+  float: right;
+  margin-right: 20px;
+}
