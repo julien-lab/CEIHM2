@@ -1,0 +1,19 @@
+#i_cart{
+  position: absolute;
+  right: 50px;
+  top: 0px;
+}
+
+#recettesMois{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#queRecherchezVous{
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  left: 12%;
+}
+

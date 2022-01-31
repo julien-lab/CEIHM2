@@ -1,11 +1,13 @@
 import {AccueilComponent} from './accueil/accueil.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {RecetteComponent} from './recette/recette.component'; // CLI imports router
+import {RecetteComponent} from './recette/recette.component';
+import {CartComponent} from './cart/cart.component'; // CLI imports router
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'recette', component: RecetteComponent },
+  { path: 'cart', component: CartComponent}
 ]; // sets up routes constant where you define your routes
 
 // configures NgModule imports and exports

@@ -6,12 +6,14 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './appRoutingModule';
 import { RecetteComponent } from './recette/recette.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
-    RecetteComponent
+    RecetteComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
