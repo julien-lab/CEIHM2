@@ -1,0 +1,66 @@
+<a id="title" href="/">
+  EasyCook
+</a>
+
+<a href="/cart">
+  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" color="black" class="bi bi-cart-check" id="i_cart" viewBox="0 0 16 16">
+    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+  </svg>
+</a>
+
+<h1 id="titre">Lasagnes</h1>
+<br>
+<div id="images">
+  <img src="https://www.lessecretsduchef.be/img/cms/poulet-teriyaki.jpg" height="200px" width="200px" id="img1">
+  <img src="https://static.750g.com/images/1200-630/1f45e5f01c3e5f023ec899ecaef89f03/img-0632.jpg" height="200px" width="200px">
+</div>
+<br>
+<div id="corps">
+  <div id="ingredients" class="centrer">
+    <h4>Liste des ingrédients</h4>
+    <br>
+    <div *ngFor="let ingredient of ingredients" class="centrer">{{ingredient}}</div>
+  </div>
+  <div id="etapes" class="centrer">
+    <h4>Recette</h4>
+    <br>
+    <div *ngFor="let etape of etapes" class="centrer">{{etape}}</div>
+  </div>
+  <div id="notes" class="centrer">
+    <h4>Commentaires des utilisateurs</h4>
+    <br>
+    <div *ngFor="let note of notes" class="centrer">{{note}}/5</div>
+    <br>
+    <h4>Laisser un commentaire</h4>
+    <div id = "form">
+      <select class="form-control" >
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <input type="text">
+      <button>Envoyer</button>
+    </div>
+  </div>
+</div>
+<br>
+<h4 class="centrer">Suggestion de menu</h4>
+<br>
+<div id="suggestions">
+  <div class="horizontal">
+    <div>Salade de chèvre chaud</div>
+    <img src="https://media.houra.fr/images/widget/recette/gd_recette_salade_chevre_chaud.jpg" height="200px" width="200px">
+  </div>
+  <div class="horizontal">
+    <div>Crumble aux pommes</div>
+    <img src="https://assets.afcdn.com/recipe/20130823/26376_w1024h768c1cx1728cy2424.jpg" height="200px" width="200px">
+  </div>
+  <div class="horizontal">
+    <div>Cake aux fruits</div>
+    <img src="https://static.750g.com/images/600-600/bc18bd5f481aeaff8b3f201430989f31/cake-aux-fruits-confits-inratable.png" height="200px" width="200px">
+  </div>
+</div>
