@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MealService} from '../../services/meal.service';
+import {Meal} from '../../shared/models/Meal';
 
 @Component({
   selector: 'app-accueil',
@@ -8,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class AccueilComponent implements OnInit {
 
+  mealList: Meal[];
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   title = 'Apprendre à cuisiner';
 
-  constructor() { }
+  constructor(private mealService: MealService) {
+    this.mealList = mealService.getAllMeal();
+  }
 
   ngOnInit(): void {
 

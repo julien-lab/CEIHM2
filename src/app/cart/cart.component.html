@@ -1,5 +1,5 @@
 <div>
-  <a id="title" href="/">
+  <a id="title" routerLink="/">
     EasyCook
   </a>
   <h1 id="listeCourses">
@@ -7,25 +7,16 @@
   </h1>
   <br>
   <div id="liste">
-    <div class="ingredients" *ngIf="message">
-      <h4>Poulet teriyaki pour 2 personnes</h4>
-      <button class="supprimer" (click)="delete()">Supprimer</button>
-      <div class="corps">
-        <div>
-          <div *ngFor="let ingredient of ingredients" class="centrer">- {{ingredient}}</div>
+    <div class="ingredients" *ngIf="mealList.length != 0">
+      <div *ngFor="let recipe of mealList">
+        <h4>{{recipe.title}}</h4>
+        <button class="supprimer" (click)="delete()">Supprimer</button>
+        <div class="corps">
+          <div>
+            <div *ngFor="let ingredient of recipe.ingredients" class="centrer">- {{ingredient}}</div>
+          </div>
+          <img src="{{recipe.url}}" height="200px" width="200px">
         </div>
-        <img src="https://www.lessecretsduchef.be/img/cms/poulet-teriyaki.jpg" height="200px" width="200px">
-      </div>
-    </div>
-    <br>
-    <div class="ingredients">
-      <h4>Poulet teriyaki pour 2 personnes</h4>
-      <button class="supprimer">Supprimer</button>
-      <div class="corps">
-        <div>
-          <div *ngFor="let ingredient of ingredients" class="centrer">- {{ingredient}}</div>
-        </div>
-        <img src="https://www.lessecretsduchef.be/img/cms/poulet-teriyaki.jpg" height="200px" width="200px">
       </div>
     </div>
   </div>
