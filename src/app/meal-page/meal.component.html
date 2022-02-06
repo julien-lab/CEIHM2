@@ -48,7 +48,14 @@
   </div>
 </div>
 <br>
-<button style="left: 10%;position: absolute;" (click)="addToCart()">Ajouter à la liste de courses</button>
+<div style="padding-left: 100px">
+  <label>number of persons : </label>
+  <br>
+  <input [(ngModel)]="personNumber">
+  <br>
+  <br>
+  <button (click)="addToCart()">Ajouter à la liste de courses</button>
+</div>
 <h4 class="centrer">Suggestion de menu</h4>
 <br>
 <div id="suggestions">

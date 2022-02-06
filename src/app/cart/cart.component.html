@@ -2,22 +2,53 @@
   <a id="title" routerLink="/">
     EasyCook
   </a>
-  <h1 id="listeCourses">
-    Ma liste de courses
-  </h1>
-  <br>
-  <div id="liste">
-    <div class="ingredients" *ngIf="mealList.length != 0">
-      <div *ngFor="let recipe of mealList">
-        <h4>{{recipe.title}}</h4>
-        <button class="supprimer" (click)="delete()">Supprimer</button>
-        <div class="corps">
-          <div>
-            <div *ngFor="let ingredient of recipe.ingredients" class="centrer">- {{ingredient}}</div>
+  <div *ngIf="mealList.length == 0" style="align-content: center">
+    <br>
+    <br>
+    <h1 style="text-align: center">
+      Vous n'avez aucun élément dans votre Liste !
+    </h1>
+    <br>
+    <h2 style="text-align: center">
+      Allez donc parcourir notre site pour vous trouver une liste
+    </h2>
+  </div>
+  <div *ngIf="mealList.length != 0">
+    <br>
+    <div id="liste">
+      <div>
+        <div class="ingredients" *ngFor="let meal of mealList">
+          <h4>{{meal.title}}</h4>
+          <div style="float: right">
+            <input list="browsers" [(ngModel)]="meal.personNumber">
+            <datalist id="browsers">
+              <option value="1">
+              <option value="2">
+              <option value="3">
+              <option value="4">
+              <option value="5">
+              <option value="6">
+              <option value="7">
+              <option value="8">
+              <option value="9">
+              <option value="10">
+              <option value="11">
+              <option value="12">
+              <option value="13">
+              <option value="14">
+              <option value="15">
+            </datalist>
           </div>
-          <img src="{{recipe.url}}" height="200px" width="200px">
+          <button class="supprimer" (click)="delete(meal)">Supprimer</button>
+          <div class="corps">
+            <div>
+              <div *ngFor="let ingredient of meal.ingredients" class="centrer">- {{ingredient}}</div>
+            </div>
+            <img src="{{meal.url}}" height="200px" width="200px">
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

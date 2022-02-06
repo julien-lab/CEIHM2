@@ -21,6 +21,7 @@ export class MealService {
         ingredients: ['Poulet', 'Riz', 'Sucre', 'Gingembre', 'Huile de sésame', 'Sauce soja'],
         etapes: ['Mélangez le jus de gingembre avec la sauce de soja, et le sucre.', 'Ajoutez les morceaux de poulet à la sauce.', 'Couvrir et laissez reposer pendant 20 minutes.'],
         notes: ['Très bon : 4', 'Excellent : 5', 'J\'ai bien aimé : 3'],
+        personNumber: 0,
       },
       {
         id: 2,
@@ -29,6 +30,7 @@ export class MealService {
         ingredients: ['Trouvez', 'Quoi', 'Mettre', 'Ici'],
         etapes: ['Idem'],
         notes: ['Très bon : 4', 'Excellent : 5', 'J\'ai bien aimé : 3'],
+        personNumber: 0,
       },
       {
         id: 3,
@@ -37,6 +39,7 @@ export class MealService {
         ingredients: ['Trouvez', 'Quoi', 'Mettre', 'Ici'],
         etapes: ['Idem'],
         notes: ['Très bon : 4', 'Excellent : 5', 'J\'ai bien aimé : 3'],
+        personNumber: 0,
       }
     ];
   }

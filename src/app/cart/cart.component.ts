@@ -10,12 +10,10 @@ import {Meal} from '../../shared/models/Meal';
 })
 export class CartComponent implements OnInit {
 
-  public ingredients = ['2 blancs de poulet', '100g de riz', '2 càs de sucre', 'Gingembre', 'Huile de sésame', 'Sauce soja'];
   mealList: Meal[];
 
   constructor(private router: Router, private cartService: CartService) {
     this.mealList = cartService.getCart();
-    console.log(cartService.getCart());
     /*if (router.getCurrentNavigation().extras.preserveFragment !== undefined) {
       this.message = this.router.getCurrentNavigation().extras.preserveFragment.valueOf();
     }*/
@@ -24,8 +22,12 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public delete(): void{
+  personNumber(){
 
+  }
+
+  public delete(meal: Meal): void{
+    this.cartService.deleteMeal(meal);
   }
 
 }

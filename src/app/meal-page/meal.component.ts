@@ -12,6 +12,7 @@ import {CartService} from '../../services/cart.service';
 export class MealComponent implements OnInit {
 
   meal!: Meal;
+  personNumber = 1;
 
   constructor(private activatedRoute: ActivatedRoute,
               private mealService: MealService,
@@ -27,7 +28,7 @@ export class MealComponent implements OnInit {
   }
 
   addToCart(): void{
-    this.cartService.addToCart(this.meal);
+    this.cartService.addToCart(this.meal, this.personNumber);
     // console.log(this.cartService.getCart())
   }
 

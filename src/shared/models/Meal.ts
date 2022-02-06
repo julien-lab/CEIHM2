@@ -5,6 +5,7 @@ export class Meal {
   ingredients!: string[];
   etapes!: string[];
   notes!: string[];
+  personNumber: number;
   /*price!:number;
   tags?:string[];
   favorite:boolean = false;

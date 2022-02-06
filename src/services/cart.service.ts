@@ -10,11 +10,21 @@ export class CartService {
 
   constructor() { }
 
-  addToCart(meal: Meal): void{
-    this.cart.push(meal);
+  addToCart(meal: Meal, personNumber: number): void{
+    if (!this.cart.find( (element) => element.id == meal.id)){
+      const myClonedMeal = Object.assign({}, meal);
+      myClonedMeal.personNumber = personNumber;
+      this.cart.push(myClonedMeal);
+    }
   }
 
   getCart(): Meal[]{
     return this.cart;
   }
+
+  deleteMeal(meal: Meal): void{
+    const index = this.cart.findIndex( (elementIndex) => elementIndex.id == meal.id);
+    this.cart.splice(index, 1);
+  }
+
 }
