@@ -15,8 +15,6 @@ export class MealPossiblityComponent implements OnInit {
 
   constructor(private router: Router, private mealListService: MealService) {
     this.mealList = mealListService.getMealList();
-    console.log(this.mealList);
-    console.log(mealListService.getMealList());
     /*if (router.getCurrentNavigation().extras.preserveFragment !== undefined) {
       this.message = this.router.getCurrentNavigation().extras.preserveFragment.valueOf();
     }*/

@@ -20,7 +20,7 @@
   <div id="ingredients" class="centrer">
     <h4>Liste des ingrédients</h4>
     <br>
-    <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*personNumber}}{{ingredient[1]}}</div>
+    <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
   </div>
   <div id="etapes" class="centrer">
     <h4>Recette</h4>
@@ -30,31 +30,30 @@
   <div id="notes" class="centrer">
     <h4>Commentaires des utilisateurs</h4>
     <br>
-    <div *ngFor="let note of meal.notes" class="centrer">{{note}}/5</div>
+    <div *ngFor="let comment of meal.comments" class="centrer">{{comment}}/5</div>
     <br>
     <h4>Laisser un commentaire</h4>
     <div id = "form">
-      <select class="form-control" >
-        <option>0</option>
+      <select class="form-control" [(ngModel)]="rate">
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
         <option>5</option>
       </select>
-      <input type="text">
-      <button  mat-button>Envoyer</button>
+      <input type="text" maxlength="40" [(ngModel)]="comment">
+      <button mat-button (click)="addComment(meal)">Envoyer</button>
     </div>
   </div>
 </div>
 <br>
 <div style="padding-left: 100px">
-  <label>number of persons : </label>
+  <label>Persons : </label>
   <br>
   <input type="number" [(ngModel)]="personNumber">
   <br>
   <br>
-  <button mat-button (click)="addToCart()">Ajouter à la liste de courses</button>
+  <button mat-button (click)="  addToCart()">Ajouter à la liste de courses</button>
 </div>
 <h4 class="centrer">Suggestion de menu</h4>
 <br>

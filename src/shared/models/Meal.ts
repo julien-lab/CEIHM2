@@ -4,8 +4,8 @@ export class Meal {
   url!: string;
   ingredients!: string[][];
   etapes!: string[];
-  notes!: string[];
   personNumber: number;
+  comments: string[];
   /*price!:number;
   tags?:string[];
   favorite:boolean = false;

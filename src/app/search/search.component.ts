@@ -28,7 +28,6 @@ export class SearchComponent implements OnInit {
       const allMeal = this.mealService.getAllMeal();
       const isFoundMeal = allMeal.find( (element) => element.title.toLowerCase() == this.searchTerm.toLowerCase());
       if (isFoundMeal != undefined) {
-        console.log(this.searchTerm);
         this.router.navigateByUrl('meal-page/' + isFoundMeal.id);
         return;
       }
@@ -43,7 +42,6 @@ export class SearchComponent implements OnInit {
             }
           }
         }
-        console.log(mealList);
         this.mealService.setMealList(mealList);
         this.router.navigateByUrl('meal-possibility');
       }

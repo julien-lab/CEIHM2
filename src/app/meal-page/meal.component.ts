@@ -14,7 +14,9 @@ import {AddedToCartDialogComponent} from '../added-to-cart-dialog/added-to-cart-
 export class MealComponent implements OnInit {
 
   meal!: Meal;
-  personNumber = 1;
+  comment: '';
+  rate = 1;
+  personNumber;
 
   constructor(private activatedRoute: ActivatedRoute,
               private mealService: MealService,
@@ -25,6 +27,7 @@ export class MealComponent implements OnInit {
         this.meal = mealService.getMealbyId(params.id);
       }
     });
+    this.personNumber = this.meal.personNumber;
   }
 
   ngOnInit(): void {
@@ -32,6 +35,7 @@ export class MealComponent implements OnInit {
 
   addToCart(): void{
     if (!this.cartService.getCart().find( (element) => element.id == this.meal.id)){
+      this.meal.personNumber = this.personNumber;
       this.cartService.addToCart(this.meal, this.personNumber);
       this.dialog.open(AddedToCartDialogComponent, {
         data : {
@@ -45,6 +49,13 @@ export class MealComponent implements OnInit {
           message: 'The meal is already in your food list',
         },
       });
+    }
+  }
+
+  addComment(meal: Meal): void{
+    if (this.comment != undefined && this.comment != ''){
+      const newComment = this.comment + ' : ' + this.rate;
+      meal.comments.push(newComment);
     }
   }
 
