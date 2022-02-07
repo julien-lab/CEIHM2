@@ -14,6 +14,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {SearchComponent} from './search/search.component';
 import {FormsModule} from '@angular/forms';
 import { MealComponent } from './meal-page/meal.component';
+import {MealPossiblityComponent} from './meal-possiblity/meal-possiblity.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MealComponent } from './meal-page/meal.component';
     DessertsComponent,
     MenusComponent,
     SearchComponent,
-    MealComponent
+    MealComponent,
+    MealPossiblityComponent
   ],
   imports: [
     BrowserModule,

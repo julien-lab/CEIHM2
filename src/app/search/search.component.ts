@@ -10,7 +10,7 @@ import {MealService} from '../../services/meal.service';
 })
 export class SearchComponent implements OnInit {
 
-  searchTerm: String = '';
+  searchTerm: string = '';
   constructor(private route: ActivatedRoute,
               private router: Router,
               private mealService: MealService) { }
@@ -24,12 +24,28 @@ export class SearchComponent implements OnInit {
   }
 
   search(): void{
-    const allMeal = this.mealService.getAllMeal();
     if (this.searchTerm){
-      const isFound = allMeal.find( (element) => element.title.toLowerCase() == this.searchTerm.toLowerCase());
-      if (isFound != undefined) {
+      const allMeal = this.mealService.getAllMeal();
+      const isFoundMeal = allMeal.find( (element) => element.title.toLowerCase() == this.searchTerm.toLowerCase());
+      if (isFoundMeal != undefined) {
         console.log(this.searchTerm);
-        this.router.navigateByUrl('meal-page/' + isFound.id);
+        this.router.navigateByUrl('meal-page/' + isFoundMeal.id);
+        return;
+      }
+      const allIngredients = this.mealService.getAllIngredients();
+      const isFoundIngredient = allIngredients.find( (element) => element.toLowerCase() == this.searchTerm.toLowerCase());
+      if (isFoundIngredient){
+        const mealList = [];
+        for (const meal of allMeal){
+          for (const ingredient of meal.ingredients){
+            if (ingredient[1].toLowerCase().includes(this.searchTerm.toLowerCase())) { // specify the word
+              mealList.push(meal);
+            }
+          }
+        }
+        console.log(mealList);
+        this.mealService.setMealList(mealList);
+        this.router.navigateByUrl('meal-possibility');
       }
     }
   }

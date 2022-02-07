@@ -2,7 +2,7 @@ export class Meal {
   id!: number;
   title!: string;
   url!: string;
-  ingredients!: string[];
+  ingredients!: string[][];
   etapes!: string[];
   notes!: string[];
   personNumber: number;

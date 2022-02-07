@@ -2,19 +2,21 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Route, Router} from '@angular/router';
 import {CartService} from '../../services/cart.service';
 import {Meal} from '../../shared/models/Meal';
+import {MealService} from '../../services/meal.service';
 
 @Component({
   selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
+  templateUrl: './meal-possiblity.component.html',
+  styleUrls: ['./meal-possiblity.component.css'],
 })
-export class CartComponent implements OnInit {
+export class MealPossiblityComponent implements OnInit {
 
   mealList: Meal[];
-  personNumber;
 
-  constructor(private router: Router, private cartService: CartService) {
-    this.mealList = cartService.getCart();
+  constructor(private router: Router, private mealListService: MealService) {
+    this.mealList = mealListService.getMealList();
+    console.log(this.mealList);
+    console.log(mealListService.getMealList());
     /*if (router.getCurrentNavigation().extras.preserveFragment !== undefined) {
       this.message = this.router.getCurrentNavigation().extras.preserveFragment.valueOf();
     }*/
@@ -26,9 +28,5 @@ export class CartComponent implements OnInit {
   /*personNumber(){
 
   }*/
-
-  public delete(meal: Meal): void{
-    this.cartService.deleteMeal(meal);
-  }
 
 }

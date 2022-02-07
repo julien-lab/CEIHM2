@@ -20,7 +20,7 @@
   <div id="ingredients" class="centrer">
     <h4>Liste des ingrédients</h4>
     <br>
-    <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient}}</div>
+    <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*personNumber}}{{ingredient[1]}}</div>
   </div>
   <div id="etapes" class="centrer">
     <h4>Recette</h4>

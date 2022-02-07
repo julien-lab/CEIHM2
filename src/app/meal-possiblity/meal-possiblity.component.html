@@ -2,17 +2,6 @@
   <a id="title" routerLink="/">
     EasyCook
   </a>
-  <div *ngIf="mealList.length == 0" style="align-content: center">
-    <br>
-    <br>
-    <h1 style="text-align: center">
-      Vous n'avez aucun élément dans votre Liste !
-    </h1>
-    <br>
-    <h2 style="text-align: center">
-      Allez donc parcourir notre site pour vous trouver une liste
-    </h2>
-  </div>
   <div *ngIf="mealList.length != 0">
     <br>
     <div id="liste">
@@ -39,7 +28,6 @@
               <option value="15">
             </datalist>
           </div>
-          <button class="supprimer" (click)="delete(meal)">Supprimer</button>
           <div class="corps">
             <div>
               <div *ngFor="let ingredient of meal.ingredients" class="centrer">- {{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
