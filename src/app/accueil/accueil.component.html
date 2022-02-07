@@ -28,7 +28,7 @@
 <br>
 
 <div id="monthRecipe">
-  <div *ngFor="let meal of mealList">
+  <div *ngFor="let meal of mealList | slice:0:3">
     <a routerLink="/meal-page/{{meal.id}}" class="horizontal">
       <div>{{meal.title}}</div>
       <img src="{{meal.url}}" height="200px" width="200px">

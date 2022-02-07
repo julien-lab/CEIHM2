@@ -8,6 +8,10 @@ export class Meal {
   personNumber: number;
   comments: string[];
   help: string[];
+  type: string;
+  chaleur: boolean;
+  prix: number;
+  duree: number
   /*price!:number;
   tags?:string[];
   favorite:boolean = false;

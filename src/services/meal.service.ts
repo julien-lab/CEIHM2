@@ -30,9 +30,20 @@ export class MealService {
     return this.mealList;
   }
 
+  getAllEntrees(): Meal[] {
+    const entreesList = [];
+    for (const meal of this.mealList)
+    {
+      if (meal.type == 'entree'){
+        entreesList.push(meal);
+      }
+    }
+    return entreesList;
+}
+
 
   public ingredients = ['Poulet', 'Riz', 'Sucre', 'Gingembre', 'Huile de sésame', 'Soja', 'Pâtes', 'Beurre', 'Farine', 'Lait', 'Oignon', 'Ail', 'Tomate',
-    'Fromage', 'Parmesan', 'Boeuf', 'Aubergine', 'Courgette', 'Poivron', 'Huile d\'Olive', 'Thym'];
+    'Fromage', 'Parmesan', 'Boeuf', 'Aubergine', 'Courgette', 'Poivron', 'Huile d\'Olive', 'Thym', 'Chèvre', 'Lardon', 'Burratas', 'Melons', 'Cognac'];
 
   public mealList = [
     {
@@ -46,7 +57,11 @@ export class MealService {
       etapes: ['Mélangez le jus de gingembre avec la sauce de soja, et le sucre.', 'Ajoutez les morceaux de poulet à la sauce.', 'Couvrir et laissez reposer pendant 20 minutes.'],
       personNumber: 1,
       comments: ['Très bon : 4', 'Excellent : 5', 'J\'ai bien aimé : 3'],
-      help: ['Faites attention à ne pas trop cuire le poulet et vous pouvez le découper à l\'aide de ciseaux']
+      help: ['Faites attention à ne pas trop cuire le poulet et vous pouvez le découper à l\'aide de ciseaux'],
+      type: 'plat',
+      chaleur: true,
+      prix: 5,
+      duree: 30
     },
     {
       id: 2,
@@ -64,7 +79,11 @@ export class MealService {
         'Faire les lasagnes' ],
       personNumber: 1,
       comments: ['Mauvais : 1', 'Presque parfait: 4', 'J\'ai pas très bien aimé : 2'],
-      help: ['Ayez bien en votre possession un four et mettez des gants lors de la dépose du récipient dans le four']
+      help: ['Ayez bien en votre possession un four et mettez des gants lors de la dépose du récipient dans le four'],
+      type: 'plat',
+      chaleur: true,
+      prix: 4,
+      duree: 30
     },
     {
       id: 3,
@@ -80,7 +99,60 @@ export class MealService {
         'Pendant ce temps, préparez les aubergines et les courgettes. Faites les cuire séparemment ou non dans l\'huile d\'olive pendant 15 minutes.'],
       personNumber: 1,
       comments: ['Bon : 3', 'Parfait : 5', 'Respectable : 4'],
-      help: ['Ayez bien en votre possession une marmite et faite attention à ne pas vous brûler']
+      help: ['Ayez bien en votre possession une marmite et faite attention à ne pas vous brûler'],
+      type: 'plat',
+      chaleur: true,
+      prix: 3,
+      duree: 70
+    },
+    {
+      id: 4,
+      title: 'Salade de chèvre chaud',
+      url: 'https://media.houra.fr/images/widget/recette/gd_recette_salade_chevre_chaud.jpg',
+      ingredients: [['100', 'g de lardon'], ['2', ' tomates'], ['1', ' gousse d\'ail'],
+        ['20', 'g d\'huile d\'olive'], ['5', 'g de basilic'], ['4', ' tranches de pain de campagne'], ['2', ' pélardons (fromage de chèvre AOC)']
+        , ['1', ' laitue']],
+      variantIngredients: [['100', 'g de lardons'], ['2', ' tomates'], ['1', ' gousse d\'ail'],
+        ['20', 'g d\'huile d\'olive'], ['5', 'g de persil'], ['4', ' tranches de pain de seigle'], ['2', ' chèvre']
+        , ['1', ' mâche']],
+      etapes: ['Frotter les quatres tranches de pain de campagne avec la gousse d\'ail. Couper les pélardons en deux dans la largeur. Poser sur chaque tranche de pain une moitié de pélardon.',
+        // tslint:disable-next-line:max-line-length
+        'Mettez-les sur la plaque de votre four avec du papier cuisson puis arrosez-les d\'huile d\'olive et de basilic. Faire cuire 15 mn.',
+        'Pendant ce temps, laver la salade et installer deux ou trois feuilles dans chaque assiette. Laver les tomates, coupez-les en deux et trancher chaque moitié en fines tranches. Posez-les sur la salade.',
+        'Faire cuire les lardons à votre convenance sans ajouter de matière grasse. Disperser les sur la salade.',
+        'Couper huit lamelles de poivron et faire cuire dans de l\'huile d\'olive à feu très doux jusqu\'à ce que le poivron soit fondant. Déposer quatre lamelles de poivron par assiette.',
+        'Faire la sauce pour la salade et déposer les toasts de chèvre chaud sur la présentation. Saupoudrer de basilic ciselé.'],
+      personNumber: 1,
+      comments: ['Bon : 3', 'Parfait : 5', 'Respectable : 4'],
+      help: ['Préchauffer votre four pour une cuisson plus propre'],
+      type: 'entree',
+      chaleur: false,
+      prix: 2,
+      duree: 20
+    },
+    {
+      id: 5,
+      title: 'Carpaccio melon mozza jambon cru',
+      url: 'https://assets.afcdn.com/recipe/20150716/62915_w768h583c1cx274cy182cxb549cyb365.webp',
+      ingredients: [['20', 'cl de muscat'], ['2', ' melons mûrs à point'], ['2', ' boules de mozzarella'],
+        ['6', ' tranches de jambon cru'], ['3', ' brins de menthe']],
+      variantIngredients: [['20', 'cl de cognac'], ['2', ' melons mûrs à point'], ['2', ' burratas'],
+        ['6', ' tranches de jambon cru'], ['3', 'brins de cerfeuil']],
+      etapes: ['Couper les melons en 2, les éplucher et les épépiner.',
+        // tslint:disable-next-line:max-line-length
+        'Découper de fines lamelles et le mettre dans un saladier avec le muscat et la menthe ciselée.',
+        'Filmer le saladier et mettre au frais.',
+        'Découper de fines tranches de mozzarella et de fines lamelles de jambon cru.',
+        'Dresser les assiettes en intercalant, une lamelle de melon, une lamelle de mozzarella, une lamelle de jambon et renouveler jusqu\'à épuisement des ingrédients.',
+        'Ajouter quelques cuillères de la marinade du melon sur les assiettes, quelques tours de moulin à poivre et servir.',
+        ''],
+      personNumber: 1,
+      comments: ['Bon : 3', 'Parfait : 5', 'Respectable : 4'],
+      help: ['Utiliser un bon couteau et n\'abusez pas de la menthe'],
+      type: 'entree',
+      chaleur: true,
+      prix: 3,
+      duree: 20
     }
   ];
 

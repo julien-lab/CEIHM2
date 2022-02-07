@@ -22,10 +22,10 @@
     <br>
     <button mat-button (click)="showOtherRecipe()">Montrer une recette variante</button>
     <div *ngIf="!variantIngredient">
-      <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
+      <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*personNumber}}{{ingredient[1]}}</div>
     </div>
     <div *ngIf="variantIngredient">
-      <div *ngFor="let ingredient of meal.variantIngredients" class="centrer">{{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
+      <div *ngFor="let ingredient of meal.variantIngredients" class="centrer">{{ingredient[0]*personNumber}}{{ingredient[1]}}</div>
     </div>
   </div>
   <div id="etapes" class="centrer">
