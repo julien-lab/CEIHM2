@@ -17,10 +17,12 @@
   </div>
 </div>
 <br>
+<br>
 <div id="images">
-  <img src="{{meal.url[0]}}" width="200px" id="img1">
+  <img src="{{meal.url[0]}}" height="200px" width="200px" id="img1">
   <img src="{{meal.url[1]}}" height="200px" width="200px">
 </div>
+<br>
 <br>
 <br>
 <div id="corps">
@@ -28,10 +30,12 @@
     <h4>Liste des ingrédients</h4>
     <br>
     <button mat-button (click)="showOtherRecipe()">Montrer une recette variante</button>
-    <div *ngIf="!variantIngredient">
+    <br>
+    <br>
+    <div *ngIf="!variantIngredient" style="max-height: 180px;height: 180px; overflow-y: auto">
       <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*personNumber}}{{ingredient[1]}}</div>
     </div>
-    <div *ngIf="variantIngredient">
+    <div *ngIf="variantIngredient" style="max-height: 150px;height: 150px; overflow-y: auto">
       <div *ngFor="let ingredient of meal.variantIngredients" class="centrer">{{ingredient[0]*personNumber}}{{ingredient[1]}}</div>
     </div>
   </div>
@@ -41,7 +45,9 @@
     <button mat-button (click)="showHelp()">Montrer les aides</button>
     <br>
     <br>
-    <div *ngFor="let etape of meal.etapes" class="centrer">{{etape}}</div>
+    <div style="max-height: 180px;height: 180px; overflow-y: auto">
+      <div *ngFor="let etape of meal.etapes" class="centrer">{{etape}}</div>
+    </div>
     <br>
   </div>
   <div id="notes" class="centrer">
@@ -61,18 +67,21 @@
     <br>
     <h4>Commentaires des utilisateurs</h4>
     <br>
-    <div style="max-height: 100px;height: 100px; overflow-y: scroll">
+    <div style="max-height: 100px;height: 100px; overflow-y: auto">
       <div *ngFor="let comment of meal.comments" style="text-align: center;">{{comment}}/5</div>
     </div>
   </div>
 </div>
-<div style="padding-left: 100px">
-  <label>Personne : </label>
-  <br>
-  <input type="number" [(ngModel)]="personNumber">
-  <br>
-  <br>
-  <button mat-button (click)="  addToCart()">Ajouter à la liste de courses</button>
+<br>
+<div style="padding-left: 100px; display: flex; flex-direction: row;border-spacing: 10px;">
+  <div style="margin: 10px;">
+    <label>Nombre de personne : </label>
+    <br>
+    <input type="number" [(ngModel)]="personNumber">
+  </div>
+  <div style="padding-top: 30px">
+    <button mat-button style="height: 35px; margin: 10px;" (click)="  addToCart()">Ajouter à la liste de courses</button>
+  </div>
 </div>
 <h4 class="centrer">Suggestion de menu</h4>
 <br>
