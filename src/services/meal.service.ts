@@ -43,7 +43,8 @@ export class MealService {
 
 
   public ingredients = ['Poulet', 'Riz', 'Sucre', 'Gingembre', 'Huile de sésame', 'Soja', 'Pâtes', 'Beurre', 'Farine', 'Lait', 'Oignon', 'Ail', 'Tomate',
-    'Fromage', 'Parmesan', 'Boeuf', 'Aubergine', 'Courgette', 'Poivron', 'Huile d\'Olive', 'Thym', 'Chèvre', 'Lardon', 'Burratas', 'Melons', 'Cognac'];
+    'Fromage', 'Parmesan', 'Boeuf', 'Aubergine', 'Courgette', 'Poivron', 'Huile d\'Olive', 'Thym', 'Chèvre', 'Lardon', 'Burratas', 'Melons', 'Cognac', 'Carotte',
+  'Champignon', 'Crème fraîche', 'Veau'];
 
   public mealList = [
     {
@@ -144,8 +145,7 @@ export class MealService {
         'Filmer le saladier et mettre au frais.',
         'Découper de fines tranches de mozzarella et de fines lamelles de jambon cru.',
         'Dresser les assiettes en intercalant, une lamelle de melon, une lamelle de mozzarella, une lamelle de jambon et renouveler jusqu\'à épuisement des ingrédients.',
-        'Ajouter quelques cuillères de la marinade du melon sur les assiettes, quelques tours de moulin à poivre et servir.',
-        ''],
+        'Ajouter quelques cuillères de la marinade du melon sur les assiettes, quelques tours de moulin à poivre et servir.'],
       personNumber: 1,
       comments: ['Bon : 3', 'Parfait : 5', 'Respectable : 4'],
       help: ['Utiliser un bon couteau et n\'abusez pas de la menthe'],
@@ -153,6 +153,30 @@ export class MealService {
       chaleur: true,
       prix: 3,
       duree: 20
+    },
+    {
+      id: 6,
+      title: 'Blanquette de veau',
+      url: ['https://assets.afcdn.com/recipe/20190529/93191_w1200h800c1cx4330cy2886cxb8660cyb5773.webp', 'https://assets.afcdn.com/recipe/20131223/2265_w768h576c1cx256cy192cxb512cyb384.webp'],
+      ingredients: [['1', ' cube de bouillon de légumes'], ['2', ' carotte'], ['1', ' oignon jaune'],
+        ['50', 'g de champignon'], ['25', 'cl de crème fraîche'], ['200', 'g de farine'], ['1', 'kg de blanquette de veau']],
+      variantIngredients: [['1', ' cube de poule'], ['2', ' carotte'], ['1', ' oignon jaune'],
+        ['50', 'g de champignon'], ['25', 'cl de crème fraîche'], ['1', ' citron'], ['200', 'g de farine'], ['1', 'kg de blanquette de veau']],
+      etapes: ['Faire revenir la viande dans un peu de beurre doux jusqu\'à ce que les morceaux soient un peu dorés.',
+        // tslint:disable-next-line:max-line-length
+        'Saupoudrer de 2 cuillères de farine. Bien remuer.',
+        'Ajouter 2 ou 3 verres d\'eau, les cubes de bouillon, le vin et remuer. Ajouter de l\'eau si nécessaire pour couvrir.',
+        'Couper les carottes en rondelles et émincer les oignons puis les incorporer à la viande, ainsi que les champignons.',
+        'Laisser mijoter à feu très doux environ 1h30 à 2h00 en remuant.',
+        'Si nécessaire, ajouter de l\'eau de temps en temps.',
+        'Dans un bol, bien mélanger la crème fraîche, le jaune d’oeuf et le jus de citron. Ajouter ce mélange au dernier moment, bien remuer et servir tout de suite.'],
+      personNumber: 1,
+      comments: ['Bon : 3', 'Bon : 3', 'Bon : 3'],
+      help: ['Préparez du temps devant vous (2h15)'],
+      type: 'plat',
+      chaleur: true,
+      prix: 10,
+      duree: 130
     }
   ];
 
