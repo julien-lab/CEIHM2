@@ -7,7 +7,7 @@
     <div id="liste">
       <div>
         <div class="ingredients" *ngFor="let meal of mealList">
-          <h4>{{meal.title}}</h4>
+          <h4 (click)="goToMeal(meal.id)">{{meal.title}}</h4>
           <div style="float: right">
             <select class="form-control" [(ngModel)]="meal.personNumber">
               <option>0</option>
@@ -32,7 +32,7 @@
             <div>
               <div *ngFor="let ingredient of meal.ingredients" class="centrer">- {{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
             </div>
-            <img src="{{meal.url}}" height="200px" width="200px">
+            <img src="{{meal.url[0]}}" height="200px" width="200px" (click)="goToMeal(meal.id)">
           </div>
         </div>
       </div>

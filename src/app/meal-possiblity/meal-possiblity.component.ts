@@ -23,6 +23,11 @@ export class MealPossiblityComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToMeal(id: number){
+    // routerLink="/meal-page/{{meal.id}}"
+    this.router.navigateByUrl('meal-page/' + id);
+  }
+
   /*personNumber(){
 
   }*/

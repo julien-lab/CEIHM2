@@ -1,7 +1,7 @@
 export class Meal {
   id!: number;
   title!: string;
-  url!: string;
+  url!: string[];
   ingredients!: string[][];
   variantIngredients!: string[][];
   etapes!: string[];
