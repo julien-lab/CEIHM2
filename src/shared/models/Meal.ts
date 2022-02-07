@@ -3,9 +3,11 @@ export class Meal {
   title!: string;
   url!: string;
   ingredients!: string[][];
+  variantIngredients!: string[][];
   etapes!: string[];
   personNumber: number;
   comments: string[];
+  help: string[];
   /*price!:number;
   tags?:string[];
   favorite:boolean = false;

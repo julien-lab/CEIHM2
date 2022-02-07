@@ -20,9 +20,16 @@
   <div id="ingredients" class="centrer">
     <h4>Liste des ingrédients</h4>
     <br>
-    <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
+    <button mat-button (click)="showOtherRecipe()">Montrer une recette variante</button>
+    <div *ngIf="!variantIngredient">
+      <div *ngFor="let ingredient of meal.ingredients" class="centrer">{{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
+    </div>
+    <div *ngIf="variantIngredient">
+      <div *ngFor="let ingredient of meal.variantIngredients" class="centrer">{{ingredient[0]*meal.personNumber}}{{ingredient[1]}}</div>
+    </div>
   </div>
   <div id="etapes" class="centrer">
+    <button mat-button (click)="showHelp()">Montrer les aides</button>
     <h4>Recette</h4>
     <br>
     <div *ngFor="let etape of meal.etapes" class="centrer">{{etape}}</div>

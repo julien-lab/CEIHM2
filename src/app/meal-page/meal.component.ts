@@ -17,6 +17,7 @@ export class MealComponent implements OnInit {
   comment: '';
   rate = 1;
   personNumber;
+  variantIngredient = false;
 
   constructor(private activatedRoute: ActivatedRoute,
               private mealService: MealService,
@@ -31,6 +32,18 @@ export class MealComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  showOtherRecipe(): void{
+    this.variantIngredient = !this.variantIngredient;
+  }
+
+  showHelp():void{
+    this.dialog.open(AddedToCartDialogComponent, {
+      data : {
+        message: this.meal.help,
+      },
+    });
   }
 
   addToCart(): void{
