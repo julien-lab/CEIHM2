@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Meal} from '../../shared/models/Meal';
 import {MealService} from '../../services/meal.service';
+import {MatDialog} from '@angular/material/dialog';
+import {AddedToCartDialogComponent} from '../added-to-cart-dialog/added-to-cart-dialog.component';
 
 @Component({
   selector: 'app-search',
@@ -13,7 +15,8 @@ export class SearchComponent implements OnInit {
   searchTerm: string = '';
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private mealService: MealService) { }
+              private mealService: MealService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -44,7 +47,13 @@ export class SearchComponent implements OnInit {
         }
         this.mealService.setMealList(mealList);
         this.router.navigateByUrl('meal-possibility');
+        return;
       }
+      this.dialog.open(AddedToCartDialogComponent, {
+        data : {
+          message: 'Rien ne correspond à votre recherche',
+        },
+      });
     }
   }
 
