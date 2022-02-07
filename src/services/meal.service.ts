@@ -44,7 +44,7 @@ export class MealService {
 
   public ingredients = ['Poulet', 'Riz', 'Sucre', 'Gingembre', 'Huile de sésame', 'Soja', 'Pâtes', 'Beurre', 'Farine', 'Lait', 'Oignon', 'Ail', 'Tomate',
     'Fromage', 'Parmesan', 'Boeuf', 'Aubergine', 'Courgette', 'Poivron', 'Huile d\'Olive', 'Thym', 'Chèvre', 'Lardon', 'Burratas', 'Melons', 'Cognac', 'Carotte',
-  'Champignon', 'Crème fraîche', 'Veau'];
+  'Champignon', 'Crème fraîche', 'Veau', 'laitue'];
 
   public mealList = [
     {
