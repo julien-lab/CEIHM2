@@ -15,6 +15,9 @@ import {SearchComponent} from './search/search.component';
 import {FormsModule} from '@angular/forms';
 import { MealComponent } from './meal-page/meal.component';
 import {MealPossiblityComponent} from './meal-possiblity/meal-possiblity.component';
+import { AddedToCartDialogComponent } from './added-to-cart-dialog/added-to-cart-dialog.component';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {MealPossiblityComponent} from './meal-possiblity/meal-possiblity.compone
     MenusComponent,
     SearchComponent,
     MealComponent,
-    MealPossiblityComponent
+    MealPossiblityComponent,
+    AddedToCartDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import {MealPossiblityComponent} from './meal-possiblity/meal-possiblity.compone
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   exports: [AppComponent],

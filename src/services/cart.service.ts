@@ -11,11 +11,9 @@ export class CartService {
   constructor() { }
 
   addToCart(meal: Meal, personNumber: number): void{
-    if (!this.cart.find( (element) => element.id == meal.id)){
-      const myClonedMeal = Object.assign({}, meal);
-      myClonedMeal.personNumber = personNumber;
-      this.cart.push(myClonedMeal);
-    }
+    const myClonedMeal = Object.assign({}, meal);
+    myClonedMeal.personNumber = personNumber;
+    this.cart.push(myClonedMeal);
   }
 
   getCart(): Meal[]{

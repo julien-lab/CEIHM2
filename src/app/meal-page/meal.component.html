@@ -43,7 +43,7 @@
         <option>5</option>
       </select>
       <input type="text">
-      <button>Envoyer</button>
+      <button  mat-button>Envoyer</button>
     </div>
   </div>
 </div>
@@ -51,10 +51,10 @@
 <div style="padding-left: 100px">
   <label>number of persons : </label>
   <br>
-  <input [(ngModel)]="personNumber">
+  <input type="number" [(ngModel)]="personNumber">
   <br>
   <br>
-  <button (click)="addToCart()">Ajouter à la liste de courses</button>
+  <button mat-button (click)="addToCart()">Ajouter à la liste de courses</button>
 </div>
 <h4 class="centrer">Suggestion de menu</h4>
 <br>
